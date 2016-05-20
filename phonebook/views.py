@@ -44,9 +44,4 @@ def list(request):
     queryset=serializers.serialize('json',queryset)
     return HttpResponse(queryset,content_type="application/json")
     
-def post_new(request):
-    if request.method=="POST":
-        print("hello")
-    else:
-        return render(request,'phonebook/contact_details.html')
     
