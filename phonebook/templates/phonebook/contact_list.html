@@ -1,0 +1,73 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+    table, th, td {
+    border-collapse: collapse;
+}
+th, td {
+   padding: 5px 0px 5px 0px;
+    text-align: left;
+}
+.add_new_button{
+        position:relative;
+    transition: .5s ease;
+    left: 1180px;
+    right: -1180px;
+
+}
+
+.cell{
+      border-bottom: 0px solid black;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+
+#main{
+    width: 50%;
+    margin-left: 340px;
+}
+    
+#no_border{
+    text-align: center;
+}   
+    
+#delete{
+    margin-left: 20px;
+    text-align: left;
+}
+    </style>
+    
+    <title>Phonebook</title></head>
+    
+    <body>
+        <div>
+        <center><h1>My Personal PhoneBook</h1></center>
+            <a href="{% url 'Add_New' %}"><button type="button" class="btn btn-default btn-sm add_new_button">
+          <span class="glyphicon glyphicon-plus"></span> Add New Contacts
+        </button></a>
+        </div>
+        <br>
+        <div id="main">
+            <table style="width:100%" class="table table-striped">
+                <tr>
+                <th class="cell">Full Name</th>
+                <th class="cell">Mobile Nummber</th>
+                <th class="cell"></th>
+                <th class="cell"></th>
+    
+                </tr>
+           {% for c in contact %}
+            <tr>
+                <td class="cell"><a href="{% url 'contact_detail' pk=c.pk %}">{{c.name}}</a></td>
+            <td class="cell">{{c.mobile_number}}</td>
+                <td id="no_border" class="#"><a href="{% url 'contact_edit' pk=c.pk %}"><button class="btn-info glyphicon glyphicon-pencil">Edit!</button></a></td>
+                <td id="no_border delete"><a href="{% url 'contact_delete' pk=c.pk %}"><button autofocus class="btn-danger red glyphicon glyphicon-remove">Delete!</button></a></td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

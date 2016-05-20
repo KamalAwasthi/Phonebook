@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+.add_new_button{
+        position:relative;
+    transition: .5s ease;
+    left: 1180px;
+    right: -1180px;
+
+}
+        .page-wrapper{
+    width:50%;
+    margin: auto;
+            text-align: center;
+    
+}
+    </style>
+    <title>Phonebook</title></head>
+    <body>
+        <div class="page-wrapper">
+        <div>
+        <center><h1>Add/Edit Contacts</h1></center>
+        </div>
+        <br>
+        <div class="form-group">
+        <form method="POST" class="post-form from-horizontal comment">{% csrf_token %}
+            <div class="from-group from-horizontal comment">{{ form.as_p }}</div>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+.page-wrapper{
+    width:60%;
+    margin: auto;
+    
+}
+.content{
+    width:50%;
+    margin: auto;
+}
+        .span{font-weight:bold;}
+        .page-header{text-align: center;}
+        .all-text{font-size: 1.75em;}
+    </style>
+    <title>detail</title></head>
+    <body class="all-text">
+        <div class="page-wrapper">
+        <div class="page-header">
+        <h1> {{contact.name}}'s contact Details</h1>
+        </div>
+        <div class="well well-sm content">
+            <span class="span glyphicon glyphicon-user">Name:-</span>&nbsp;{{contact.name}}
+        </div>
+        
+        <div class="well well-sm content">
+            <span class="span glyphicon glyphicon-phone">Mobile country code:-</span>&nbsp;{{contact.mobile_number.country_code}}
+            <br><br>
+            <span class="span glyphicon glyphicon-phone">Mobile National number:-</span>&nbsp;{{contact.mobile_number.national_number}}
+        </div>
+        
+        <div class="well well-sm content">
+            <span class="span glyphicon glyphicon-home">Address:-</span>&nbsp;{{contact.address}}
+        </div>
+        </div>
+    </body>
+</html>
