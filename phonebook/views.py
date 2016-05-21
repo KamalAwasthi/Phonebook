@@ -51,5 +51,5 @@ def list(request):
 def new_data(request):
     data=request.POST
     post=data.values()
-    return HttpResponse(post[1])
+    return HttpResponse(post[0])
         
