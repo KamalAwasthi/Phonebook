@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
-from rest_framework.parsers import JSONParse
+from rest_framework.parsers import JSONParser
 
 # Create your views here.
 def contact_list(request):
