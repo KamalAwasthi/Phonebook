@@ -47,7 +47,8 @@ def list(request):
 
 def new_data(request):
     if request.method=="POST":
-        data=json.loads(request.POST)
-        data.save()
+        json_str=((request.body).decode('utf-8'))
+        post=json.loads(json_str)
+        post.save()
     return HttpResponse(request,content_type="application/json")
         
