@@ -51,7 +51,10 @@ def list(request):
 def new_data(request):
     data=request.POST
     post=data.get('Json')
-    m=Phonebook(**data)
+    m=Phonebook()
+    m.name=data('name')
+    m.mobile_number=data('mobile_number')
+    m.address=data('address')
     m.save()
     return HttpResponse(post)
         
