@@ -49,6 +49,7 @@ def new_data(request):
     if request.method=="POST":
         json_str=((request.body).decode('utf-8'))
         post=json.loads(json_str)
-        post.save()
+        m=Phonebook(**post)
+        m.save()
     return HttpResponse(request,content_type="application/json")
         
