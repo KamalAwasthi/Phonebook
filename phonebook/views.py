@@ -44,4 +44,10 @@ def list(request):
     queryset=serializers.serialize('json',queryset)
     return HttpResponse(queryset,content_type="application/json")
     
-    
+def new_data(request):
+    data=JSONParser().parse(request)
+    serializer=SnippetSerializer(data=data)
+    if serializer.is_valid():
+        serializer.save()
+        return JSONResponse(serializer.data,status=201)
+    return JSONResponse(serializer.errors,status=400)
