@@ -49,6 +49,6 @@ def list(request):
 
 @csrf_exempt
 def new_data(request):
-    data=request.POST
+    data=request.read()
     return HttpResponse(data)
         
