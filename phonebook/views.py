@@ -49,5 +49,5 @@ def new_data(request):
     if request.method=="POST":
         data=json.loads(request.POST)
         data.save()
-        return HttpResponse(request,content_type="application/json")
+    return HttpResponse(request,content_type="application/json")
         
