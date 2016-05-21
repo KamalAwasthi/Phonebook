@@ -47,9 +47,5 @@ def list(request):
     return HttpResponse(queryset,content_type="application/json")
 
 def new_data(request):
-    json_str=((request.body).decode('utf-8'))
-    post=json.loads(json_str)
-    m=Phonebook(**post)
-    m.save()
-    return HttpResponse(request,content_type="application/json")
+    return HttpResponse(request.POST,content_type="application/json")
         
