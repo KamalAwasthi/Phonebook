@@ -4,11 +4,7 @@ from .forms import AddNew
 from django.shortcuts import redirect
 from django.core import serializers
 from django.http import HttpResponse
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework.renderers import JSONRenderer
-from rest_framework.parsers import JSONParser
+
 
 # Create your views here.
 def contact_list(request):
@@ -48,11 +44,12 @@ def list(request):
     queryset=Phonebook.objects.all()
     queryset=serializers.serialize('json',queryset)
     return HttpResponse(queryset,content_type="application/json")
-    
+
 def new_data(request):
-    data=JSONParser().parse(request)
-    serializer=SnippetSerializer(data=data)
-    if serializer.is_valid():
-        serializer.save()
-        return JSONResponse(serializer.data,status=201)
-    return JSONResponse(serializer.errors,status=400)
+    if request.method=="POST":
+        data=json.load(request.data)
+        if data.is_valid():
+            data.save()
+            return redirect('contact_lis')
+        return render(request,'phonebook/contact_list.html')
+        
