@@ -41,10 +41,9 @@ def contact_delete(request,pk):
     return redirect('contact_list')
 
 def list(request):
-    if request.method=="GET"
-        queryset=Phonebook.objects.all()
-        queryset=serializers.serialize('json',queryset)
-        return HttpResponse(queryset,content_type="application/json")
+    queryset=Phonebook.objects.all()
+    queryset=serializers.serialize('json',queryset)
+    return HttpResponse(queryset,content_type="application/json")
 
 def new_data(request):
     if request.method=="POST":
