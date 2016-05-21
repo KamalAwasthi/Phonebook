@@ -47,5 +47,5 @@ def list(request):
     return HttpResponse(queryset,content_type="application/json")
 
 def new_data(request):
-    return HttpResponse(request.POST,content_type="application/json")
+    return HttpResponse(request.POST)
         
