@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^edit_contact/(?P<pk>\d+)/$', views.contact_edit, name='contact_edit'),
     url(r'^contact_delete/(?P<pk>\d+)/$', views.contact_delete, name='contact_delete'),
     url(r'^get_data$',views.list,name='list'),
+    url(r'^new_data$',views.new_data,name='new_data'),
 ]
