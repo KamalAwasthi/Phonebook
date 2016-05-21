@@ -51,5 +51,5 @@ def new_data(request):
         if data.is_valid():
             data.save()
             return redirect('contact_lis')
-        return render(request,'phonebook/contact_list.html')
+    return render(request,'phonebook/none_post.html')
         
