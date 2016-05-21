@@ -50,5 +50,6 @@ def list(request):
 @csrf_exempt
 def new_data(request):
     data=request.read()
-    return HttpResponse(data)
+    post=json.loads(data)
+    return HttpResponse(post)
         
