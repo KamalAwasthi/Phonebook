@@ -52,5 +52,5 @@ def new_data(request):
     data=request.POST
     post=data.get('Json')
     json_dict=json.loads(post)
-    return HttpResponse(json_dict)
+    return HttpResponse(str(json_dict))
         
