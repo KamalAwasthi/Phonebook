@@ -5,6 +5,7 @@ import json
 from django.shortcuts import redirect
 from django.core import serializers
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -46,6 +47,7 @@ def list(request):
     queryset=serializers.serialize('json',queryset)
     return HttpResponse(queryset,content_type="application/json")
 
+@csrf_exempt
 def new_data(request):
-    return HttpResponse(request.POST)
+    return HttpResponse('hello')
         
