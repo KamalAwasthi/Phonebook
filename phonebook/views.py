@@ -47,9 +47,7 @@ def list(request):
 
 def new_data(request):
     if request.method=="POST":
-        data=json.load(request.data)
-        if data.is_valid():
-            data.save()
-            return redirect('contact_lis')
-    return render(request,'phonebook/none_post.html')
+        data=json.loads(request.POST)
+        data.save()
+        return HttpResponse(request,content_type="application/json")
         
