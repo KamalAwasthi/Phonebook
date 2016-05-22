@@ -61,6 +61,7 @@ def delete_object(request):
     data=request.POST
     pk=data.get('pk')
     c=Phonebook.objects.get(pk=pk)
+    c.delete()
     return HttpResponse(str(c))
     #c=Phonebook.objects.get(pk=pk)
     #contact.delete()
