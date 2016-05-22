@@ -58,4 +58,4 @@ def new_data(request):
         
 def delete_object(request,pk):
     contact=get_object_or_404(Phonebook,pk=pk).delete()
-    return HttpResponse(contact)
+    return HttpResponse(str(contact))
