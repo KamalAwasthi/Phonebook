@@ -59,5 +59,5 @@ def new_data(request):
 @csrf_exempt       
 def delete_object(request,pk):
     contact=Phonebook.objects.get(pk=pk)
-    contact.delete()
-    return HttpResponse("object deleted")
+    #contact.delete()
+    return HttpResponse(contact)
