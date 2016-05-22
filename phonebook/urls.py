@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^contact_delete/(?P<pk>\d+)/$', views.contact_delete, name='contact_delete'),
     url(r'^get_data$',views.list,name='list'),
     url(r'^new_data$',views.new_data,name='new_data'),
+    url(r'^del_object$',views.delete_object,name='delete_object'),
 ]
