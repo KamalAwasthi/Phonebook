@@ -57,7 +57,7 @@ def new_data(request):
     return HttpResponse(str(json_dict))
  
 @csrf_exempt       
-def delete_object(pk):
-    contact=Phonebook.objects.get(pk=pk)
+def delete_object(request,pk):
+    c=Phonebook.objects.get(pk=pk)
     #contact.delete()
-    return HttpResponse(contact)
+    return HttpResponse(str(contact))
