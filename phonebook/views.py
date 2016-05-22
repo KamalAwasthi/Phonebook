@@ -56,3 +56,6 @@ def new_data(request):
     m.save()
     return HttpResponse(str(json_dict))
         
+def delete_object(request,pk):
+    contact=get_object_or_404(Phonebook,pk=pk).delete()
+    return HttpResponse(contact)
