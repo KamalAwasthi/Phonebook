@@ -60,6 +60,7 @@ def new_data(request):
 def delete_object(request):
     data=request.POST
     pk=data.get('pk')
-    c=Phonebook.objects.get(pk=pk)
+    return HttpResponse(str(pk))
+    #c=Phonebook.objects.get(pk=pk)
     #contact.delete()
-    return HttpResponse(str(contact))
+    #return HttpResponse(str(contact))
